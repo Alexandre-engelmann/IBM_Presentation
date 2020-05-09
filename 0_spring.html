@@ -1,0 +1,53 @@
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid red; "><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">package</span> com<span style="color: #333333">.</span><span style="color: #0000CC">eng</span><span style="color: #333333">.</span><span style="color: #0000CC">demo</span><span style="color: #333333">.</span><span style="color: #0000CC">web</span><span style="color: #333333">;</span>
+
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.springframework.web.bind.annotation.PathVariable</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.springframework.web.bind.annotation.RequestMapping</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.springframework.web.bind.annotation.RequestMethod</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.springframework.web.bind.annotation.RequestParam</span><span style="color: #333333">;</span>
+    <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">org.springframework.web.bind.annotation.RestController</span><span style="color: #333333">;</span>
+    
+    <span style="color: #555555; font-weight: bold">@RestController</span>
+    <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/greeting&quot;</span><span style="color: #333333">)</span> <span style="color: #888888">//controller level mapping</span>
+    <span style="color: #888888">//root url for this controller</span>
+    <span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">HelloController</span> <span style="color: #333333">{</span>
+        <span style="color: #888888">//@RequestMapping(value=&quot;/basic&quot;, method = RequestMethod.GET)</span>
+        <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/basic&quot;</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">sayHello</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&lt;h1&gt;hello&lt;/h1&gt;&quot;</span><span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+        
+        
+        <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/proper&quot;</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">sayProperHello</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&lt;h1&gt;hello there, how are you?&lt;/h1&gt;&quot;</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+        <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span><span style="background-color: #fff0f0">&quot;/user_entry&quot;</span><span style="color: #333333">)</span>
+        <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">userForm</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+    <span style="color: #888888">//		return &quot;&lt;form action=\&quot;/greeting/user_greeting\&quot; method=\&quot;POST\&quot;&gt;\r\n&quot; + ///user_greeting\</span>
+            <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;&lt;form action=\&quot;/greeting/user_greeting\&quot; method=\&quot;GET\&quot;&gt;\r\n&quot;</span> <span style="color: #333333">+</span> <span style="color: #888888">///user_greeting\</span>
+            <span style="background-color: #fff0f0">&quot;  First name:&lt;br&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  &lt;input type=\&quot;text\&quot; name=\&quot;firstname\&quot;&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  &lt;br&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  Last name:&lt;br&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  &lt;input type=\&quot;text\&quot; name=\&quot;lastname\&quot;&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  &lt;br&gt;&lt;br&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;  &lt;input type=\&quot;submit\&quot; value=\&quot;Submit\&quot;&gt;\r\n&quot;</span> <span style="color: #333333">+</span> 
+            <span style="background-color: #fff0f0">&quot;&lt;/form&gt;&quot;</span><span style="color: #333333">;</span>
+        <span style="color: #333333">}</span>
+        
+    <span style="color: #888888">//		@RequestMapping(value=&quot;/user_greeting&quot;, method=RequestMethod.POST)</span>
+            <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span>value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;/user_greeting&quot;</span><span style="color: #333333">,</span> method<span style="color: #333333">=</span>RequestMethod<span style="color: #333333">.</span><span style="color: #0000CC">GET</span><span style="color: #333333">)</span>
+            <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">printUserGreeting</span><span style="color: #333333">(</span><span style="color: #555555; font-weight: bold">@RequestParam</span> String firstname<span style="color: #333333">,</span> <span style="color: #555555; font-weight: bold">@RequestParam</span> String lastname<span style="color: #333333">){</span>
+    <span style="color: #888888">//			return &quot;form submitted&quot;;</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;Hello there, &quot;</span><span style="color: #333333">+</span> firstname <span style="color: #333333">+</span> <span style="background-color: #fff0f0">&quot; &quot;</span> <span style="color: #333333">+</span> lastname<span style="color: #333333">;</span>
+            <span style="color: #333333">}</span>
+    
+            <span style="color: #555555; font-weight: bold">@RequestMapping</span><span style="color: #333333">(</span>value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;/orders/{id}&quot;</span><span style="color: #333333">,</span> method<span style="color: #333333">=</span>RequestMethod<span style="color: #333333">.</span><span style="color: #0000CC">GET</span><span style="color: #333333">)</span> <span style="color: #888888">//id = path variable</span>
+            <span style="color: #008800; font-weight: bold">public</span> String <span style="color: #0066BB; font-weight: bold">getOrder</span><span style="color: #333333">(</span><span style="color: #555555; font-weight: bold">@PathVariable</span> String id<span style="color: #333333">)</span> <span style="color: #333333">{</span> <span style="color: #888888">//let us bring the import</span>
+                <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;Order ID: &quot;</span> <span style="color: #333333">+</span> id<span style="color: #333333">;</span>
+                
+            <span style="color: #333333">}</span>
+    <span style="color: #333333">}</span>
+    </pre></div>
+    

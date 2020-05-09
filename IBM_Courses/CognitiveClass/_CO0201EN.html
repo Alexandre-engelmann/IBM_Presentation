@@ -1,0 +1,45 @@
+<html>
+	<head>
+        <title id="insert-title">Micov works</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script src="../../load_header_footer.js"></script>
+		<script src="../../scripts/main.js"></script>
+
+		<div class="_header"></div>
+
+	<style>
+	.bodybackgroud{
+		border:3px solid black;	
+	}
+	</style>
+		
+	
+	</head>
+	<body>
+		<p id="insert" style="position: absolute"></p><br><br>
+		<h1>Kubernetes labs</h1>
+		<ol>
+			<li>Lab-1: <b>Push an image</b> of an app to IBM Cloud Container Registry and <b>deploy an app to a cluster</b>(old command bx now ibmcloud)</li>
+			<ul>
+				<li>Push and image</li>
+				<ol>
+					<li>Login to IBM cloud CLI: <code>ibmcloud login --sso</code></li>
+					<li>Log in with your IBM Cloud credentials to be allow to push images to IBM Cloud Container Register: <code>ibmcloud cr login</code></li>
+					<li>Make a namespace in IBM Cloud Container Registry: <code>ibmcloud cr namespace-add &ltnamespace&gt</code></li>
+					<li>Build a docker image: <code>docker build --tag us.icr.io/&ltmy_namespace&gt/hello-world .</code></li>
+				</ol>
+				<li>Deploy your application</li>
+			</ul>
+			<li>Lab-2</li>
+			<li>Lab-3</li>
+		</ol>
+		
+	</body>
+	<footer">
+		<div class="_footer"></div>
+	</footer>
+</html>
+
+<script src="../../scripts/current_file_name.js"></script>
