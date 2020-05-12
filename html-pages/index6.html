@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title id="insert-title">Micov works</title>
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script src="../scripts/load_header_footer.js"></script>
+		<div class="_header"></div>
+	</head>
+	<!--Start here-->
+	<body>
+
+		<pre class="prettyprint"><code>
+package com.in28minutes.springmvc;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class LoginController {
+	
+	@RequestMapping(value="/login")
+//	@ResponseBody //Don't wanna print on the screen
+
+	public String sayHello() {
+//		return "Hello World dummy";
+		return "login";// view I mean jsp
+	}
+
+}
+		</pre>
+		<ul>
+			<li>DispatcherServlet</li>
+			<li>Controllers</li>
+			<li>Viewer resolvers</li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		
+		<p>typing</p>
+
+	</body>
+	<!--E-N-D-->
+	<footer><div class="_footer"></div></footer>
+</html>
+
